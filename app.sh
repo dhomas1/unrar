@@ -1,6 +1,6 @@
 ### UNRAR ###
 _build_unrar() {
-local VERSION="6.2.1"
+local VERSION="6.2.6"
 local FOLDER="unrar"
 local FILE="unrarsrc-${VERSION}.tar.gz"
 local URL="http://www.rarlab.com/rar/${FILE}"
@@ -8,11 +8,9 @@ local URL="http://www.rarlab.com/rar/${FILE}"
 _download_tgz "${FILE}" "${URL}" "${FOLDER}"
 pushd target/"${FOLDER}"
 mv makefile Makefile
-make 
-# LDFLAGS="${LDFLAGS} -pthread"
-# CXX="${CXX}" STRIP="${STRIP}" \
-#  CXXFLAGS="${CFLAGS} -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE" \
-  
+make CXX="${CXX}" STRIP="${STRIP}" \
+  CXXFLAGS="${CFLAGS} -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE" \
+  LDFLAGS="${LDFLAGS} -pthread"  
 make install DESTDIR="${DEST}"
 popd
 }
