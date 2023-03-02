@@ -8,7 +8,8 @@ local URL="http://www.rarlab.com/rar/${FILE}"
 _download_tgz "${FILE}" "${URL}" "${FOLDER}"
 pushd target/"${FOLDER}"
 mv makefile Makefile
-make LDFLAGS="${LDFLAGS} -pthread"
+make 
+# LDFLAGS="${LDFLAGS} -pthread"
 # CXX="${CXX}" STRIP="${STRIP}" \
 #  CXXFLAGS="${CFLAGS} -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE" \
   
