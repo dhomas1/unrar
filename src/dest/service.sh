@@ -7,7 +7,7 @@
 
 framework_version="2.1"
 name="unrar"
-version="5.3.4"
+version="7.1.2"
 description="File archiver with a high compression ratio"
 depends=""
 webui=""
