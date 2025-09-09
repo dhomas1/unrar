@@ -1,6 +1,6 @@
 ### UNRAR ###
 _build_unrar() {
-local VERSION="6.2.10"
+local VERSION="7.1.2"
 local FOLDER="unrar"
 local FILE="unrarsrc-${VERSION}.tar.gz"
 local URL="http://www.rarlab.com/rar/${FILE}"
