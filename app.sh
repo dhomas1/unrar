@@ -9,7 +9,7 @@ _download_tgz "${FILE}" "${URL}" "${FOLDER}"
 pushd target/"${FOLDER}"
 mv makefile Makefile
 make CXX="${CXX}" STRIP="${STRIP}" \
-  CXXFLAGS="${CFLAGS} -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE" \
+  CXXFLAGS="${CFLAGS} -std=c++11 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE" \
   LDFLAGS="${LDFLAGS} -pthread"  
 make install DESTDIR="${DEST}"
 popd
