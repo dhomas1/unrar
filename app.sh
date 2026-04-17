@@ -8,9 +8,8 @@ local URL="http://www.rarlab.com/rar/${FILE}"
 _download_tgz "${FILE}" "${URL}" "${FOLDER}"
 pushd target/"${FOLDER}"
 mv makefile Makefile
-PATH="/home/drobo/xtools/toolchain/5n/bin:${PATH}" \
- make CXX="${CXX}" CC="${CXX}" CPP="${CXX} -E" STRIP="${STRIP}" \
-    CXXFLAGS="${CFLAGS} -std=c++11 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE" \
+make CXX="${CXX}" STRIP="${STRIP}" \
+    CXXFLAGS="${CFLAGS} -std=c++0x -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE" \
     LDFLAGS="${LDFLAGS} -pthread"
 # make CXX="${CXX}" STRIP="${STRIP}" \
 #  CXXFLAGS="${CFLAGS} -std=c++11 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE" \
