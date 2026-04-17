@@ -8,8 +8,8 @@ local URL="http://www.rarlab.com/rar/${FILE}"
 _download_tgz "${FILE}" "${URL}" "${FOLDER}"
 pushd target/"${FOLDER}"
 mv makefile Makefile
-make CXX="${CXX}" STRIP="${STRIP}" \
-    CXXFLAGS="${CFLAGS} -std=c++0x -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE" \
+make CXX="arm-linux-gnueabi-g++" STRIP="${STRIP}" \
+    CXXFLAGS="${CFLAGS} -std=c++11 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE" \
     LDFLAGS="${LDFLAGS} -pthread"
 # make CXX="${CXX}" STRIP="${STRIP}" \
 #  CXXFLAGS="${CFLAGS} -std=c++11 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE" \
